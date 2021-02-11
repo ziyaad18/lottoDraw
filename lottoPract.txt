@@ -1,0 +1,95 @@
+from tkinter import *
+from random import sample
+
+
+from tkinter import *
+from random import sample
+import random
+
+
+def gettingNumbers():
+    num1.configure(text=str(random.sample(range(1, 49),1)))
+    num2.configure(text=str(random.sample(range(1, 49), 1)))
+    num3.configure(text=str(random.sample(range(1, 49), 1)))
+    num4.configure(text=str(random.sample(range(1, 49), 1)))
+    num5.configure(text=str(random.sample(range(1, 49), 1)))
+    num6.configure(text=str(random.sample(range(1, 49), 1)))
+
+
+
+
+def resetting():
+    num1.config(text=str(0))
+    num2.config(text=str(0))
+    num3.config(text=str(0))
+    num4.config(text=str(0))
+    num5.config(text=str(0))
+    num6.config(text=str(0))
+
+
+
+
+
+
+
+
+
+
+window = Tk()
+window.title("Live Lotto Draw")
+window.config(background="yellow")
+window.geometry("590x350")
+
+num1 = Label(window, relief='groove', width = 5, bd=4,  fg='white', bg='black')
+num1.grid(row = 1, column = 1, padx = 5, pady = 7)
+num2 = Label(window, relief='groove', width = 5, bd=4, fg='white', bg='black')
+num2.grid(row = 1, column = 2, padx = 5, pady = 7)
+num3 = Label(window, relief='groove', width = 5, bd=4,  fg='white', bg='black')
+num3.grid(row = 1, column = 3, padx = 5, pady = 7)
+num4 = Label(window, relief='groove', width = 5, bd=4,  fg='white', bg='black')
+num4.grid(row = 1, column = 4, padx = 5, pady = 7)
+num5 = Label(window, relief='groove', width = 5, bd=4,  fg='white', bg='black')
+num5.grid(row = 1, column = 5, padx = 5, pady = 7)
+num6 = Label(window, relief='groove', width = 5, bd=4,  fg='white', bg='black')
+num6.grid(row = 1, column = 6, padx = 5, pady = 7)
+
+num1 = Entry(window, relief='groove', width = 5, bd=4,  fg='white', bg='black')
+num1.grid(row = 5, column = 1, padx = 5, pady = 7)
+num2 = Entry(window, relief='groove', width = 5, bd=4, fg='white', bg='black')
+num2.grid(row = 5, column = 2, padx = 5, pady = 7)
+num3 = Entry(window, relief='groove', width = 5, bd=4,  fg='white', bg='black')
+num3.grid(row = 5, column = 3, padx = 5, pady = 7)
+num4 = Entry(window, relief='groove', width = 5, bd=4,  fg='white', bg='black')
+num4.grid(row = 5, column = 4, padx = 5, pady = 7)
+num5 = Entry(window, relief='groove', width = 5, bd=4,  fg='white', bg='black')
+num5.grid(row = 5, column = 5, padx = 5, pady = 7)
+num6 = Entry(window, relief='groove', width = 5, bd=4,  fg='white', bg='black')
+num6.grid(row = 5, column = 6, padx = 5, pady = 7)
+
+
+
+closeButton = Button(window)
+closeButton.configure(text = "CLOSE", fg = 'white', bg = '#ff0000')
+closeButton.grid(row = 3, column = 1, columnspan = 6, pady = 2)
+
+numberGenerate = Button(window, width=20, text="Generate Numbers", command=gettingNumbers)
+numberGenerate.configure(fg = "White" ,bg = "Green")
+numberGenerate.grid(row = 2, column = 6, padx = 5, pady = 100)
+
+reset = Button(window, width=10, text="Reset", command =resetting)
+reset.configure(fg = "White" ,bg = "Green")
+reset.grid(row = 2, column = 2, padx = 5, pady = 100)
+
+
+def close():
+    quit()
+
+
+
+
+closeButton.configure(command = close)
+
+
+window.mainloop()
+
+
